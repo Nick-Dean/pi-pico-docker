@@ -10,7 +10,7 @@ RUN apt update -y
 RUN apt install -y curl xz-utils
 
 # Toolchain called out by RaspberryPi
-RUN apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
+RUN apt install -y cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
 
 # Start with CI image to build development image
 # Contains development tool such as git, debug support, etc.
