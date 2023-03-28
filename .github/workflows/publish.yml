@@ -33,9 +33,10 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           file: Dockerfile
-          target: ci
+          target: ci          
+          registry: ghcr.io
           push: true
-          tags: ghcr.io/nick-dean/pi-pico-ci:lasest
+          tags: nick-dean/pi-pico-dev:lasest
             
       # Build CI Image
       - name: Build pi-pico-dev
@@ -43,6 +44,7 @@ jobs:
         with:
           file: Dockerfile
           target: dev
+          registry: ghcr.io
           push: true
-          tags: ghcr.io/nick-dean/pi-pico-dev:lasest
+          tags: nick-dean/pi-pico-dev:lasest
       
