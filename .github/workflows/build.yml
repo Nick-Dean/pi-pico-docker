@@ -39,7 +39,7 @@ jobs:
           file: Dockerfile
           target: ci
           push: false
-          tag: pi-pico-ci:lasest
+          tags: pi-pico-ci:lasest
             
       # Build CI Image
       - name: Build pi-pico-dev
@@ -48,4 +48,4 @@ jobs:
           file: Dockerfile
           target: dev
           push: false
-          tag: pi-pico-dev:lasest
+          tags: pi-pico-dev:lasest
