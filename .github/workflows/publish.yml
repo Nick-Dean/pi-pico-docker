@@ -31,11 +31,11 @@ jobs:
       # Build and Push CI Image
       - name: Build and Push pi-pico-ci
         run: |
-          docker build --target=ci -t pi-pico-ci:latest .
+          docker build --target=ci -t ghcr.io/nick-dean/pi-pico-ci:latest .
           docker push ghcr.io/nick-dean/pi-pico-ci:latest
             
       # Build and Push dev Image
       - name: Build and Push pi-pico-dev
         run: |
-          docker build --target=dev -t pi-pico-dev:latest .
+          docker build --target=dev -t ghcr.io/nick-dean/pi-pico-dev:latest .
           docker push ghcr.io/nick-dean/pi-pico-dev:latest
