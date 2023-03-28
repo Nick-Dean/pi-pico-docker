@@ -28,23 +28,14 @@ jobs:
       - name: Log into registry ${{ env.REGISTRY }}
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
           
-      # Build CI Image
-      - name: Build pi-pico-ci
-        uses: docker/build-push-action@v3
-        with:
-          file: Dockerfile
-          target: ci          
-          registry: ghcr.io
-          push: true
-          tags: ghcr.io/nick-dean/pi-pico-ci:latest
+      # Build and Push CI Image
+      - name: Build and Push pi-pico-ci
+        run: |
+          docker build --target=ci -t pi-pico-ci:latest .
+          docker push ghcr.io/nick-dean/pi-pico-ci:latest
             
-      # Build CI Image
-      - name: Build pi-pico-dev
-        uses: docker/build-push-action@v3
-        with:
-          file: Dockerfile
-          target: dev
-          registry: ghcr.io
-          push: true
-          tags: ghcr.io/nick-dean/pi-pico-dev:latest
-      
+      # Build and Push dev Image
+      - name: Build and Push pi-pico-dev
+        run: |
+          docker build --target=dev -t pi-pico-dev:latest .
+          docker push ghcr.io/nick-dean/pi-pico-dev:latest
