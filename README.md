@@ -24,3 +24,4 @@ including debugging. It contains everything within `pi-pico-ci`, as well as
 the following:
 
  - git
+ - openocd
