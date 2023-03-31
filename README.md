@@ -18,6 +18,7 @@ overhead of debugging or other development tools. It contains the following:
 - gcc-arm-none-eabi
 - libnewlib-arm-none-eabi
 - build-essential
+- python3
 
 The `pi-pico-dev` image contains the tools required for generarl development,
 including debugging. It contains everything within `pi-pico-ci`, as well as

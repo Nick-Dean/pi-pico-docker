@@ -10,7 +10,7 @@ RUN apt update -y
 RUN apt install -y curl xz-utils
 
 # Toolchain called out by RaspberryPi
-RUN apt install -y cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
+RUN apt install -y cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential python3
 
 # Start with CI image to build development image
 # Contains development tool such as git, debug support, etc.
@@ -20,7 +20,7 @@ LABEL version="1.0"
 LABEL description="Raspberry Pi Pico development Environment"
 
 # Development tools
-RUN apt install -y git
+RUN apt install -y git openocd
 
 # Cleanup
 RUN apt -qy autoremove
